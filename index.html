@@ -5,10 +5,34 @@
     <meta name="viewport" content="width=device-width">
     <title>repl.it</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
-    <h1>Bonjour</h1>
-    Les amis
+    <div style='text-align:center'>
+        <h1>TODOs</h1>
+    </div>
+
+    <div style='margin: 10px'>
+      <input type="text" placeholder="Nouveau TODO" id="newTodo">
+      <button id="addTodo" onClick="addTodo()">Ajouter</button>
+    </div>
+
+    <div id='todoList'>
+      <div class='todoItem'>
+        <span>Faire un site</span>
+        <span>
+          <input type="checkbox" class='completed'>
+          <i class="fa fa-trash-o trash"></i>
+        </span>
+      </div>
+      <div class='todoItem'>
+        <span>Ecrire un roman</span>
+        <span>
+          <input type="checkbox" class='completed'>
+          <i class="fa fa-trash-o trash"></i>
+        </span>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>
