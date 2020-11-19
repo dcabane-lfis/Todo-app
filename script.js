@@ -1,5 +1,3 @@
-console.log('hop!')
-
 const addTodo = () => {
   let newTodo = document.querySelector("#newTodo").value;
   if(newTodo){
@@ -19,11 +17,19 @@ const addTodo = () => {
 
 document.addEventListener('click', e => {
   if(e.target.classList.contains('completed')){
-    console.log(e.target.parentNode.parentNode.classList);
     if(e.target.checked){
-      e.target.parentNode.parentNode.classList.append('completed');
+      e.target.parentNode.parentNode.classList.add('completed');
     } else {
       e.target.parentNode.parentNode.classList.remove('completed');
     }
   }
-})
+  if(e.target.classList.contains('trash')){
+    e.target.parentNode.parentNode.remove();
+  }
+});
+
+document.addEventListener('keydown', e => {
+  if (e.keyCode === 13){
+    addTodo();
+  }
+});
